@@ -45,8 +45,8 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>SIGA FMHZ</b>',
+    'logo_img' => 'https://1.bp.blogspot.com/-L9FkVXLG_s8/YQyw2Ix62DI/AAAAAAAABr0/r2aBB5HrwCkH-qBP-O44ffVngYG9ilknwCLcBGAsYHQ/s2048/20200521_232240.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',

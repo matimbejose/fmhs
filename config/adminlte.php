@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Faculdade Moz Help School',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,12 +45,12 @@ return [
     |
     */
 
-    'logo' => '<b>SIGA FMHZ</b>',
+    'logo' => '<b>SIGA FMHS</b>',
     'logo_img' => 'https://1.bp.blogspot.com/-L9FkVXLG_s8/YQyw2Ix62DI/AAAAAAAABr0/r2aBB5HrwCkH-qBP-O44ffVngYG9ilknwCLcBGAsYHQ/s2048/20200521_232240.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'AdminLTE',
+    'logo_img_alt' => 'SIGAFMHS',
 
     /*
     |--------------------------------------------------------------------------
@@ -246,14 +246,14 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
+        // [
+        //     'text'        => 'pages',
+        //     'url'         => 'admin/pages',
+        //     'icon'        => 'far fa-fw fa-file',
+        //     'label'       => 4,
+        //     'label_color' => 'success',
+        // ],
+        ['header' => 'account_settings'],            
         [
             'text' => 'profile',
             'url'  => 'admin/settings',
@@ -264,59 +264,81 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        // [
+        //     'text'    => 'multilevel',
+        //     'icon'    => 'fas fa-fw fa-share',
+        //     'submenu' => [
+        //         [
+        //             'text' => 'level_one',
+        //             'url'  => '#',
+        //         ],
+        //         [
+        //             'text'    => 'level_one',
+        //             'url'     => '#',
+        //             'submenu' => [
+        //                 [
+        //                     'text' => 'level_two',
+        //                     'url'  => '#',
+        //                 ],
+        //                 [
+        //                     'text'    => 'level_two',
+        //                     'url'     => '#',
+        //                     'submenu' => [
+        //                         [
+        //                             'text' => 'level_three',
+        //                             'url'  => '#',
+        //                         ],
+        //                         [
+        //                             'text' => 'level_three',
+        //                             'url'  => '#',
+        //                         ],
+        //                     ],
+        //                 ],
+        //             ],
+        //         ],
+        //         [
+        //             'text' => 'level_one',
+        //             'url'  => '#',
+        //         ],
+        //     ],
+        // ],
+        ['header' => 'Menu'],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
+            'text' => 'Painel',
+            'icon' => 'fas fa-chart-line',
+            'url' => '/'
+
         ],
-        ['header' => 'labels'],
+
         [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
+            'text'       => 'Usuarios',
+            'icon'       => 'fas fa-fw fa-users',
+            'url'        => '/users',
         ],
         [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
+            'text'       => 'Estudantes',
+            'icon'       => 'fas fa-book-reader',
+            'url'        => '/students',
         ],
         [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
+            'text'       => 'Professores',
+            'icon'    => 'fas fa-graduation-cap',
+            'url'        => '/teachers',
+        ],
+        [
+            'text' => 'Turmas',
+            'icon' => 'fas fa-chalkboard-teacher',
+            'url' => '/classes'
+        ],
+        [
+            'text' => ' Horarios',
+            'icon' => 'fas fa-clipboard-list',
+            'url' => '/schedules',
+        ],
+        [
+            'text' => 'Cursos',
+            'icon' => 'fas fa-school',
+            'url' => '/coures'
         ],
     ],
 

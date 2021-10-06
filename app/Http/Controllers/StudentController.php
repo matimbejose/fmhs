@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use App\Models\User;
 
-class UserController extends Controller
+use App\Models\Student;
+use Illuminate\Http\Request;
+
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,12 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('Users.index');
-    }
-
-
-    public function showUsers() {
-        return response()->json(['users' => User::all()]);
+        return view('Students.index');
     }
 
     /**
@@ -28,7 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+       
     }
 
     /**
@@ -45,21 +41,21 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showStudents()
     {
-        //
+        return response()->json(['students' => Student::all()]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Student $student)
     {
         //
     }
@@ -68,10 +64,10 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Student $student)
     {
         //
     }
@@ -79,11 +75,17 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Student  $student
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+        $student = Student::find($id)->delete();
+
+        if($student) {
+            return respone()->json(['sucess' =>'Removido com sucesso']);
+        }
+
+
     }
 }

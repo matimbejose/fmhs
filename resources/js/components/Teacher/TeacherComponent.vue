@@ -1,0 +1,29 @@
+<template>
+    <div class="container-fuild">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="card card-danger">
+                    <div class="card-header">
+                        <h3 class="card-title">Professores</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>ola</p>
+                 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+
+<script>
+export default {
+    name: 'TeacherComponent'
+}
+</script>

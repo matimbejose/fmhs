@@ -9,7 +9,7 @@
 
 @section('content')
     <div id="app">
-    <dashboard-component />
+    <teacher-component />
     </div>
 @stop
 

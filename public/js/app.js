@@ -2366,10 +2366,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
+var url = 'http://127.0.0.1:8000';
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'StudentComponent',
   props: ['id'],
@@ -2390,7 +2388,7 @@ __webpack_require__.r(__webpack_exports__);
     getStudents: function getStudents() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get('http://127.0.0.1:8000/getstudents').then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get("".concat(url, "/getstudents")).then(function (response) {
         console.log(response);
         _this.students = response.data.students;
       })["catch"](function (error) {
@@ -2400,7 +2398,7 @@ __webpack_require__.r(__webpack_exports__);
     deleteStundents: function deleteStundents(id) {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default()["delete"]("http://127.0.0.1:8000/students/".concat(id)).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default()["delete"]("".concat(url, "/students/").concat(id)).then(function (response) {
         _this2.status = response.data.sucess;
 
         _this2.getStudents();
@@ -39061,8 +39059,6 @@ var render = function() {
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(student.chair))]),
                     _vm._v(" "),
-                    _c("td", [_vm._v(_vm._s(student.phone))]),
-                    _vm._v(" "),
                     _c("td", [
                       _vm._m(2, true),
                       _vm._v(" "),
@@ -39072,7 +39068,11 @@ var render = function() {
                         "button",
                         {
                           staticClass: "btn btn-danger btn-xs",
-                          on: { click: _vm.deleteStundents }
+                          on: {
+                            click: function($event) {
+                              return _vm.deleteStundents(student.id)
+                            }
+                          }
                         },
                         [_c("i", { staticClass: "fas fa-trash" })]
                       )
@@ -39112,9 +39112,7 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [_vm._v("Nome")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Disciplianas")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Celular")])
+        _c("th", [_vm._v("Disciplianas")])
       ])
     ])
   },

@@ -17,17 +17,14 @@ Route::get('/', function () {
     return view('home');
 });
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/getusers', 'UserController@showUsers');
 Route::resource('/users', 'UserController');
 
 Route::get('/getstudents', 'StudentController@showStudents');
 Route::resource('/students', 'StudentController');
-
-
-
 
 Route::get('/getteacher', 'TeacherController@showTeacher');
 Route::resource('/teachers', 'TeacherController');
@@ -41,6 +38,4 @@ Route::resource('/coures', 'CourseController');
 Route::get('/getschedule', 'ScheduleController@showSchedule');
 Route::resource('/schedules', 'ScheduleController');
 
-
 Auth::routes();
-

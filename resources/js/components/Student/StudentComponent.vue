@@ -18,24 +18,21 @@
                             <tr>
                             <th>Nome</th>
                             <th>Disciplianas</th>
-                            <th>Celular</th>
                             </tr>
                         </thead>
                         <tbody>
                         <tr v-for="student in students" :key="student.id">
                         <td>{{ student.name }}</td>
                         <td>{{ student.chair }}</td>
-                        <td>{{ student.phone }}</td>
-
                         <td>
                             <button class="btn btn-primary btn-xs"><i class="fas fa-eye"></i> </button>
                             <a  class="btn btn-success btn-xs"><i class="fas fa-pen"></i> </a>
-                        <button @click="deleteStundents" class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
+                        <button @click="deleteStundents(student.id)" class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
                         </td>
                         </tr>
                         </tbody>
                         </table>
-                    </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -44,6 +41,8 @@
 
 <script>
 import axios from 'axios';
+const url = 'http://127.0.0.1:8000';
+
 export default {
     name: 'StudentComponent',
     props: ['id'],
@@ -64,7 +63,7 @@ export default {
     },
     methods: {
         getStudents() {
-            axios.get('http://127.0.0.1:8000/getstudents')
+            axios.get(`${url}/getstudents`)
             .then((response) => {
                 console.log(response);
                 this.students = response.data.students
@@ -75,7 +74,7 @@ export default {
         },
 
         deleteStundents(id) {
-            axios.delete(`http://127.0.0.1:8000/students/${id}`)
+            axios.delete(`${url}/students/${id}`)
             .then((response) => {
                 this.status = response.data.sucess
                 this.getStudents()

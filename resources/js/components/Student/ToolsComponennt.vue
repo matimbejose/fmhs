@@ -13,28 +13,57 @@
                     </div>
                     <div class="card-body">
                         <table class="table table-sm">
-                        <caption>Verificar Pauta de ava</caption>
-                       
                         <thead>
                             <tr>
                             <th>Nome</th>
                             <th>Disciplianas</th>
+                            <th>Celular</th>
+                            <th>Data</th>
                             </tr>
                         </thead>
                         <tbody>
                         <tr v-for="student in students" :key="student.id">
                         <td>{{ student.name }}</td>
                         <td>{{ student.chair }}</td>
+                         <td>{{ student.phone }}</td>
+                        <td>{{ student.data }}</td>
                         <td>
                             <button class="btn btn-primary btn-xs"><i class="fas fa-eye"></i> </button>
-                            
+                            <a  :href="`/students/${student.id}/edit`" class="btn btn-success btn-xs"><i class="fas fa-pen"></i> </a>
+                        <button @click="deleteStundents(student.id)" class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
                         </td>
                         </tr>
                         </tbody>
                         </table>
-                        <a href="students/create" class="fas fa-plus-square"> Manipular Estudantes</a> <br />
-                  
                 </div>
+
+                <hr>
+
+                  <div class="card-body">
+                <legend>Formulario para adcionar novo estudante</legend>
+                <form href="useForm" action="#" @submit.prevent="save">
+                <div class="mb-3">
+                <label  class="form-label">Nome</label>
+                <input type="text" class="form-control" id="name"  placeholder="Nome do estudante" v-model="formData.name">
+                </div>
+                   <div class="mb-3">
+                <label  class="form-label">Disciplianas</label>
+                <input type="text" class="form-control" id="chair" placeholder="Disciplinas" v-model="formData.chair">
+                </div>
+                     <div class="mb-3">
+                <label  class="form-label">Celular</label>
+                <input type="text" class="form-control" id="phone" placeholder="Celular do estudante" v-model="formData.phone">
+                </div>
+                <div class="mb-3">
+                <label  class="form-label">Data</label>
+                <input type="text" class="form-control"  placeholder="Data de ingresso do estudante" id="data" v-model="formData.data">
+                </div>
+                <div class="mb-3 form-check">
+                </div>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </form>    
+                 </div>
+                
                 </div>
                         <footer-component />
             </div>
@@ -78,6 +107,16 @@ export default {
             })
         },
 
+        save() {
+            axios.post(`${url}/students/create`, this.formData)
+            .then((response) => {
+                this.status = response.data.sucess
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+        },
+
         deleteStundents(id) {
             axios.delete(`${url}/students/${id}`)
             .then((response) => {
@@ -87,11 +126,8 @@ export default {
             .catch((error) => {
                 console.log(error)
             })
-        },
-
-       
+        }
  },
-
     mounted() {
         this.getStudents()
     }

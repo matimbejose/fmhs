@@ -79,7 +79,7 @@
         </div>
         <footer class="main-footer-fluid">
        
-           <strong>Faculdade Moz Help School - Monitoria Academica e A nossa Vocacao</strong>
+           <footer-component />
           
         </footer>
     </div>
@@ -88,12 +88,15 @@
     
 
 <script>
+import FooterComponent from '../FooterComponent.vue'
 export default {
-  name: 'DashboardComponent'
+  name: 'DashboardComponent',
+  components: { 
+    FooterComponent
+  }
 
 }
 </script>
 
 <style>
 
-</style>

@@ -1,10 +1,10 @@
 <template>
-       <div class="container-fuild">
+<div class="container-fuild">
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <div class="card card-yellow">
+                <div class="card card-danger">
                     <div class="card-header">
-                        <h3 class="card-title">Estudantes <small v-if="status">{{ status }}</small></h3>
+                        <h3 class="card-title">Estudantes</h3>
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                 <i class="fas fa-minus"></i>
@@ -12,7 +12,8 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <table class="table table-sm">
+
+                              <table class="table table-sm">
                         <thead>
                             <tr>
                             <th>Nome</th>
@@ -22,52 +23,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <tr v-for="student in students" :key="student.id">
-                        <td>{{ student.name }}</td>
-                        <td>{{ student.chair }}</td>
-                         <td>{{ student.phone }}</td>
-                        <td>{{ student.data }}</td>
+                        <td>Matimbe jose</td>
+                        <td>Matematica fisica</td>
+                        <td>847787067</td>
+                        <td>dia 25 de marco</td>
+
                         <td>
                             <button class="btn btn-primary btn-xs"><i class="fas fa-eye"></i> </button>
-                            <a  :href="`/students/${student.id}/edit`" class="btn btn-success btn-xs"><i class="fas fa-pen"></i> </a>
-                        <button @click="deleteStundents(student.id)" class="btn btn-danger btn-xs"><i class="fas fa-trash"></i></button>
+                            <button class="btn btn-primary btn-xs"><i class="fas fa-edit"></i> </button>
+                            <button class="btn btn-primary btn-xs"><i class="fas fa-trash"></i></button>
+                            
                         </td>
-                        </tr>
                         </tbody>
                         </table>
+                         <a href="/students/tools/create" class="btn btn-primary">Cadastrar Estudantes</a>
+                    </div>
                 </div>
-
-                <hr>
-
-                  <div class="card-body">
-                <legend>Formulario para adcionar novo estudante</legend>
-                <form href="useForm" action="#" @submit.prevent="save">
-                <div class="mb-3">
-                <label  class="form-label">Nome</label>
-                <input type="text" class="form-control" id="name"  placeholder="Nome do estudante" v-model="formData.name">
-                </div>
-                   <div class="mb-3">
-                <label  class="form-label">Disciplianas</label>
-                <input type="text" class="form-control" id="chair" placeholder="Disciplinas" v-model="formData.chair">
-                </div>
-                     <div class="mb-3">
-                <label  class="form-label">Celular</label>
-                <input type="text" class="form-control" id="phone" placeholder="Celular do estudante" v-model="formData.phone">
-                </div>
-                <div class="mb-3">
-                <label  class="form-label">Data</label>
-                <input type="text" class="form-control"  placeholder="Data de ingresso do estudante" id="data" v-model="formData.data">
-                </div>
-                <div class="mb-3 form-check">
-                </div>
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
-                </form>    
-                 </div>
-                
-                </div>
-                        <footer-component />
             </div>
         </div>
+        <FooterComponent />
     </div>
 </template>
 

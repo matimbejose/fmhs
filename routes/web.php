@@ -24,8 +24,8 @@ Route::get('/getusers', 'UserController@showUsers');
 Route::resource('/users', 'UserController');
 
 Route::get('/getstudents', 'StudentController@showStudents');
-Route::resource('/students', 'StudentController');
-
+Route::resource('students/tools', 'StudentController');
+Route::view('/students', 'Students.index' );
 
 
 

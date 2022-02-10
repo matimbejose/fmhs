@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Ferramentas para editar estudantes ')
+@section('title', 'Cadastrar novos estudantes')
 
 
 @section('content_header')
@@ -9,7 +9,7 @@
 
 @section('content')
     <div id="app">
-    <tlstudent-component />
+    <studentcreate-component />
     
     </div>
 @stop

@@ -28,6 +28,7 @@ Vue.component('course-component', require('./components/Course/CouseComponent.vu
 Vue.component('schedule-component', require('./components/Schedule/ScheduleComponent.vue').default);
 Vue.component('teacher-component', require('./components/Teacher/TeacherComponent.vue').default);
 Vue.component('tlstudent-component', require('./components/Student/ToolsComponennt.vue').default);
+Vue.component('studentcreate-component', require('./components/Student/StudenentCraeteComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

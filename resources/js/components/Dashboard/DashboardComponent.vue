@@ -78,9 +78,7 @@
             </div>
         </div>
         <footer class="main-footer-fluid">
-       
            <footer-component />
-          
         </footer>
     </div>
     

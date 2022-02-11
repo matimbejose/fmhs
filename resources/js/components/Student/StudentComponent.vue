@@ -12,40 +12,80 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <table class="table table-sm">
+                                                  <table class="table table-sm">
                         <thead>
                             <tr>
                             <th>Nome</th>
                             <th>Disciplianas</th>
+
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Jose Matimbe</td>
-                                <td>Matematica e fica</td>
+                            <tr v-for="student in students" :key="student.id">
+                        <td>{{ student.name }}</td>
+                        <td>{{ student.chair }}</td>
                             </tr>
-                        
                         </tbody>
                         </table>
                         <a href="students/tools" class="btn btn-primary">Manipular Estudantes</a>
+                        <a href="students/pauta" class="btn btn-primary">Verificar Pauta</a>
+
                 </div>
                 </div>
                        
             </div>
         </div>
-      <footer-component />
+        <footer>
+            <footer-component />
+        </footer>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
+const  url = 'http://127.0.0.1:8000';
 import FooterComponent from '../FooterComponent.vue'
 
-const url = 'http://127.0.0.1:8000'; 
 
 export default {
-    name: 'StudentComponent'
+    name: 'StudentComponent',
+    props: ['id'],
+    components: {
+        FooterComponent
+
+    },
+    data() {
+        return {
+            students:[],
+            formData: {
+                id: '',
+                name: '',
+                chair: '',
+            },
+            status: false 
+        }
+    },
+    methods: {
+        getStudents() {
+            axios.get(`${url}/getstudents`)
+            .then((response) => {
+                console.log(response)
+                this.students = response.data.students
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+        }
+    },
+
+    mounted() {
+        this.getStudents();
+    }
+
 }
 
 </script>
+
+
 
 

@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'SISTEMA DE GESTAO ACADEMICA')
+@section('title', 'Estudantes')
 
 
 @section('content_header')

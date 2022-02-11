@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'SISTEMA DE GESTAO ACADEMICA')
+@section('title', 'Horarios')
 
 
 @section('content_header')

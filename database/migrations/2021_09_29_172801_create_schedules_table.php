@@ -18,7 +18,6 @@ class CreateSchedulesTable extends Migration
             $table->string('segunda');
             $table->string('terca');
             $table->string('quarta');
-            $table->strign('quinta');
             $table->string('quinta');
             $table->string('sexta');
             $table->string('sabado');

@@ -21,12 +21,13 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/getusers', 'UserController@showUsers');
-Route::resource('/users', 'UserController');
+Route::resource('users/tools', 'UsersController');
+Route::view('/users', 'Users.index');
 
 Route::get('/getstudents', 'StudentController@showStudents');
 Route::resource('students/tools', 'StudentController');
 Route::view('/students', 'Students.index' );
-
+Route::view('/students/pauta','Students.pauta');
 
 
 Route::get('/getteacher', 'TeacherController@showTeacher');

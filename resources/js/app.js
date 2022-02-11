@@ -21,15 +21,19 @@ window.Vue = require('vue').default;
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('dashboard-component', require('./components/Dashboard/DashboardComponent.vue').default);
+
 Vue.component('user-component', require('./components/Users/UserComponent.vue').default);
+Vue.component('usercreate-component', require('./components/Users/UserCreateComponent.vue').default);
+
 Vue.component('student-component', require('./components/Student/StudentComponent.vue').default);
+Vue.component('studentcreate-component', require('./components/Student/StudenentCraeteComponent.vue').default);
+Vue.component('tlstudent-component', require('./components/Student/ToolsComponennt.vue').default);
+
 Vue.component('classe-component', require('./components/Classe/ClasseComponent.vue').default);
 Vue.component('course-component', require('./components/Course/CouseComponent.vue').default);
 Vue.component('schedule-component', require('./components/Schedule/ScheduleComponent.vue').default);
 Vue.component('teacher-component', require('./components/Teacher/TeacherComponent.vue').default);
-Vue.component('tlstudent-component', require('./components/Student/ToolsComponennt.vue').default);
-Vue.component('studentcreate-component', require('./components/Student/StudenentCraeteComponent.vue').default);
-
+Vue.component('pauta-component', require('./components/PautaComponent.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

@@ -17,31 +17,38 @@
                     <tr>
                         <th>Nome</th>
                         <th>Email</th>
-                        <th>Função</th>
+                        <th>Nivel</th>
                     </tr>
                     </thead>
                     <tbody>
                      <tr v-for="user in users" :key="user.id">
                          <td>{{ user.name }}</td>
                          <td>{{ user.email }}</td>
-                         <td>Matematica - Regete</td>
                      </tr>
                     </tbody>
                     </table>
+            <a href="/tools" class="btn btn-primary">Cadastrar</a>
                     </div>
                 </div>
             </div>
         </div>
+        <footer>
+            <footer-component />
+        </footer>
     </div>
 </template>
 
 <script>
 import axios from 'axios'
-const url = '';
+import FooterComponent from '../FooterComponent.vue'
+const url = 'http://127.0.0.1:8000';
 
 export default {
     name: 'UserComponent',
     props: ['id'],
+    components: {
+        FooterComponent
+    },
 
     data() {
         return {
@@ -53,12 +60,11 @@ export default {
             },
             satus: false
         }
-
     },
 
     methods: {
         getUsers() {
-            axios.get('http://127.0.0.1:8000/getusers')
+            axios.get(`${url}/getusers`)
             .then((response) => {
                 console.log(response)
                 this.users = response.data.users
@@ -66,22 +72,11 @@ export default {
             .catch((error) => {
                 console.log(error)
             })
-        },
-        deleteStundents() {
-            axios.get('')
         }
-
     },
 
     mounted() {
-        this.getUsers('http://127.0.0.1:8000/getusers')
-        .then((response) => {
-            console.log(response)
-            this.students = response.data.students
-        })
-        .catch((error) => {
-            console.log(error)
-        })
+       this.getUsers();
     },
 
     created() {

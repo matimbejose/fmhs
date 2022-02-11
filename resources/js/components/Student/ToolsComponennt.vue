@@ -23,17 +23,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <td>Matimbe jose</td>
-                        <td>Matematica fisica</td>
-                        <td>847787067</td>
-                        <td>dia 25 de marco</td>
-
+                            <tr v-for="student in students" :key="student.id">
+                        <td>{{ student.name }}</td>
+                        <td>{{ student.chair }}</td>
+                        <td>{{ student.phone }}</td>
+                        <td>{{ student.data }}</td>
                         <td>
                             <button class="btn btn-primary btn-xs"><i class="fas fa-eye"></i> </button>
                             <button class="btn btn-primary btn-xs"><i class="fas fa-edit"></i> </button>
                             <button class="btn btn-primary btn-xs"><i class="fas fa-trash"></i></button>
-                            
                         </td>
+                            </tr>
                         </tbody>
                         </table>
                          <a href="/students/tools/create" class="btn btn-primary">Cadastrar Estudantes</a>
@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <FooterComponent />
+    <FooterComponent />
     </div>
 </template>
 

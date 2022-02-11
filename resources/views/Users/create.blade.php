@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Usuarios')
+@section('title', 'Cadastrar novos estudantes')
 
 
 @section('content_header')
@@ -9,8 +9,7 @@
 
 @section('content')
     <div id="app">
-    <user-component />
-       
+    <usercreate-component />
     </div>
 @stop
 

@@ -17,11 +17,18 @@
                 </div>
             </div>
         </div>
+        <footer>
+            <footer-component />
+        </footer>
     </div>
 </template>
 
 <script>
+import FooterComponent from '../FooterComponent.vue'
 export default {
-    name: 'CouseComponent'
+    name: 'CouseComponent',
+    components: {
+        FooterComponent
+    }
 }
 </script>

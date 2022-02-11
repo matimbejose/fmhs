@@ -14,15 +14,16 @@ class StudentController extends Controller
     public function create() {
         return view('Students.create');
     }
-
+    
+    public function showStudents() {
+        return response()->json(['students' => Student::all()]);
+    }
+    
     public function edit($id) {
         
     }
 
-    // public function showStudents()
-    // {
-    //     return response()->json(['students' => Student::all()]);
-    // }
+
 
     // 856502409 - edson
 

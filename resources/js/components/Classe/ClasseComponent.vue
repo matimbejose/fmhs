@@ -12,17 +12,26 @@
                         </div>
                     </div>
                     <div class="card-body">
+                        
                  
                     </div>
                 </div>
             </div>
         </div>
+        <footer>
+            <footer-component />
+        </footer>
     </div>
 </template>
 
 <script>
+import FooterComponent from '../FooterComponent.vue'
+
 export default {
-    name: 'ClasseComponent'
+    name: 'ClasseComponent',
+    components: {
+        FooterComponent
+    }
 
 }
 </script>

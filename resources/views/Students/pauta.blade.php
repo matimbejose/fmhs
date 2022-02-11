@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Usuarios')
+@section('title', 'Pauta de Todos')
 
 
 @section('content_header')
@@ -9,8 +9,8 @@
 
 @section('content')
     <div id="app">
-    <user-component />
-       
+    <pauta-component />
+    
     </div>
 @stop
 

@@ -191,7 +191,7 @@ return [
     'dashboard_url' => 'home',
     'logout_url' => 'logout',
     'login_url' => 'login',
-    'register_url' => null,
+    'register_url' => 'register',
     'password_reset_url' => null,
     'password_email_url' => 'password/email',
     'profile_url' => false,
